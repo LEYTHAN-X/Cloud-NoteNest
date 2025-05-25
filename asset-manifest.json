@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Cloud-NoteNest/static/css/main.2411e297.css",
+    "main.js": "/Cloud-NoteNest/static/js/main.cefde344.js",
+    "static/js/453.d724e79d.chunk.js": "/Cloud-NoteNest/static/js/453.d724e79d.chunk.js",
+    "index.html": "/Cloud-NoteNest/index.html",
+    "main.2411e297.css.map": "/Cloud-NoteNest/static/css/main.2411e297.css.map",
+    "main.cefde344.js.map": "/Cloud-NoteNest/static/js/main.cefde344.js.map",
+    "453.d724e79d.chunk.js.map": "/Cloud-NoteNest/static/js/453.d724e79d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2411e297.css",
+    "static/js/main.cefde344.js"
+  ]
+}
