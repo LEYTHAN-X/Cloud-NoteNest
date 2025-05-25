@@ -2,6 +2,12 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
+    const handelLogout = () => {
+        localStorage.removeItem('token');
+        window.location.href = '/login'; // Redirect to login page
+    }
+    // useLocation hook to get the current location
+    // This is useful to highlight the active link in the navbar
     let location = useLocation()
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -20,10 +26,10 @@ export default function Navbar() {
                             <Link className={`nav-link ${location.pathname === "/about" ? "active" : ""}`} to="/about">About</Link>
                         </li>
                     </ul>
-                    <form className="d-flex" role="search">
+                    {!localStorage.getItem('token')?<form className="d-flex" role="search">
                         <Link className="btn btn-primary mx-2" to="/login" role="button">Login</Link>
                         <Link className="btn btn-primary mx-2" to="/signup" role="button">Signup</Link>
-                    </form>
+                    </form>:<button onClick={handelLogout} className="btn btn-primary">Logout</button>}
 
                 </div>
             </div>

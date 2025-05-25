@@ -12,7 +12,7 @@ const NoteState = (props) => {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjgyODFmMjMyOTlmNDBlMDg1YmRkN2I3In0sImlhdCI6MTc0NzQ1OTk5NX0.xvyO6qBQjYw-ImywYTprCiDBdkhgkwD5vmDHcetNDvo"
+                "auth-token": localStorage.getItem('token') // Assuming you store the token in localStorage
             }
         });
         const json = await response.json();
@@ -26,7 +26,7 @@ const NoteState = (props) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjgyODFmMjMyOTlmNDBlMDg1YmRkN2I3In0sImlhdCI6MTc0NzQ1OTk5NX0.xvyO6qBQjYw-ImywYTprCiDBdkhgkwD5vmDHcetNDvo"
+                "auth-token": localStorage.getItem('token') // Assuming you store the token in localStorage
             },
             body: JSON.stringify({ title, description, tag })
         });
@@ -40,7 +40,7 @@ const NoteState = (props) => {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-                "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjgyODFmMjMyOTlmNDBlMDg1YmRkN2I3In0sImlhdCI6MTc0NzQ1OTk5NX0.xvyO6qBQjYw-ImywYTprCiDBdkhgkwD5vmDHcetNDvo"
+                "auth-token": localStorage.getItem('token') // Assuming you store the token in localStorage
             },
         });
         const json = await response.json();
@@ -57,7 +57,7 @@ const NoteState = (props) => {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjgyODFmMjMyOTlmNDBlMDg1YmRkN2I3In0sImlhdCI6MTc0NzQ1OTk5NX0.xvyO6qBQjYw-ImywYTprCiDBdkhgkwD5vmDHcetNDvo"
+                "auth-token": localStorage.getItem('token') // Assuming you store the token in localStorage
             },
             body: JSON.stringify({ title, description, tag })
         });
