@@ -5,12 +5,123 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #121212 !important; /* Dark background */
+  color: #f0f0f0 !important; /* Light text color for readability */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-i{
+
+/* Golden color variable for easy changes */
+:root {
+  --golden-color: #FFD700;
+  --dark-card-bg: #1e1e1e;
+}
+
+/* Style all headings with the golden color */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--golden-color);
+}
+
+/* Style icons */
+i {
   cursor: pointer;
+  color: var(--golden-color);
+  transition: transform 0.2s ease-in-out;
+}
+i:hover {
+  transform: scale(1.15);
+}
+
+/* --- Bootstrap Component Overrides --- */
+
+/* Navbar */
+.navbar {
+  background-color: #000 !important;
+  border-bottom: 1px solid var(--golden-color);
+}
+.navbar-brand {
+  color: var(--golden-color) !important;
+  font-weight: bold;
+}
+.nav-link {
+  color: white !important;
+}
+.nav-link.active, .nav-link:hover {
+  color: var(--golden-color) !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--golden-color) !important;
+  border-color: var(--golden-color) !important;
+  color: #000 !important;
+  font-weight: bold;
+}
+.btn-primary:hover {
+  background-color: #e6c300 !important; /* Slightly darker gold */
+  border-color: #e6c300 !important;
+}
+
+/* Cards (for Notes) */
+.card {
+  background-color: var(--dark-card-bg) !important;
+  border: 1px solid #444;
+  color: #f0f0f0;
+}
+.card-title {
+   color: var(--golden-color);
+}
+
+/* Forms */
+.form-control {
+  background-color: var(--dark-card-bg) !important;
+  color: #f0f0f0 !important;
+  border: 1px solid #444 !important;
+}
+.form-control::placeholder {
+  color: #6c757d !important;
+}
+.form-control:focus {
+  background-color: var(--dark-card-bg) !important;
+  border-color: var(--golden-color) !important;
+  box-shadow: 0 0 0 0.25rem rgba(255, 215, 0, 0.25) !important;
+}
+.form-label {
+  color: #f0f0f0 !important;
+}
+
+/* Modal */
+.modal-content {
+    background-color: #1e1e1e !important;
+    border: 1px solid var(--golden-color);
+}
+.modal-header, .modal-footer {
+    border-bottom: 1px solid #444;
+    border-top: 1px solid #444;
+}
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Alerts */
+.alert {
+  color: white !important;
+}
+.alert-success {
+  background-color: #198754 !important;
+  border-color: #198754 !important;
+}
+.alert-danger {
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+}
+
+/* List Group for About Page */
+.list-group-item {
+    background-color: transparent !important;
+    color: #f0f0f0;
+    border-color: #444 !important;
 }

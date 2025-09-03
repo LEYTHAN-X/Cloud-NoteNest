@@ -13,13 +13,12 @@ const Login = (props) => {
             body: JSON.stringify({ email: credentials.email, password: credentials.password })
         });
         const json = await response.json();
-        console.log(json);
-        if(json.success){
+        if (json.success) {
             localStorage.setItem('token', json.authtoken);
-            props.showAlert("Logged in Successfully","success");
+            props.showAlert("Logged in Successfully", "success");
             navigate("/");
         } else {
-            props.showAlert("Invalid Details","danger");
+            props.showAlert("Invalid Credentials", "danger");
         }
     };
 
@@ -28,37 +27,43 @@ const Login = (props) => {
     };
 
     return (
-        <div className="container mt-5" style={{ maxWidth: "500px" }}>
-            <h2 className="mb-4">Login</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Email address</label>
-                    <input
-                        type="email"
-                        className="form-control"
-                        id="email"
-                        name="email"
-                        value={credentials.email}
-                        onChange={onChange}
-                        placeholder="Enter your email"
-                        required
-                    />
+        <div className="row justify-content-center mt-5">
+            <div className="col-md-6">
+                <div className="card p-4">
+                    <div className="card-body">
+                        <h2 className="text-center mb-4">Login to Note-Nest</h2>
+                        <form onSubmit={handleSubmit}>
+                            <div className="mb-3">
+                                <label htmlFor="email" className="form-label">Email address</label>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    id="email"
+                                    name="email"
+                                    value={credentials.email}
+                                    onChange={onChange}
+                                    placeholder="Enter your email"
+                                    required
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="password" className="form-label">Password</label>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    id="password"
+                                    name="password"
+                                    value={credentials.password}
+                                    onChange={onChange}
+                                    placeholder="Enter your password"
+                                    required
+                                />
+                            </div>
+                            <button type="submit" className="btn btn-primary w-100">Login</button>
+                        </form>
+                    </div>
                 </div>
-                <div className="mb-3">
-                    <label htmlFor="password" className="form-label">Password</label>
-                    <input
-                        type="password"
-                        className="form-control"
-                        id="password"
-                        name="password"
-                        value={credentials.password}
-                        onChange={onChange}
-                        placeholder="Enter your password"
-                        required
-                    />
-                </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
+            </div>
         </div>
     );
 };
